@@ -633,14 +633,14 @@ hist1 = model_1.fit(x_train,y_train,
                   validation_data=(x_val,y_val),
 #                   class_weight = 'balanced',       # 10/20/2020 class_weights
                   batch_size= batch_size , 
-                  epochs= 10,verbose=1,
+                  epochs= 2,verbose=1,
                   )
 
 
 model_path = os.path.join(project_folder, project_name+".h5")
 model_1.save(model_path)
 
-hist_path = os.path.join(project_folder, project_name )
+hist_path = os.path.join(project_folder, project_name + "_hist.pkl")
 
 import pickle
 pickle.dump(hist1, hist_path)
