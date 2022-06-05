@@ -10,7 +10,7 @@ from PIL import Image
 import random
 from tensorflow.keras import optimizers
 #from keras.utils.np_utils import to_categorical
-from tensorflow.keras.utils import multi_gpu_model, plot_model
+#from tensorflow.keras.utils import multi_gpu_model, plot_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from tensorflow.keras.models import *
 from tensorflow.keras.layers import *
@@ -130,7 +130,7 @@ from PIL import Image
 import random
 from tensorflow.keras import optimizers
 #from keras.utils.np_utils import to_categorical
-from tensorflow.keras.utils import multi_gpu_model, plot_model
+#from tensorflow.keras.utils import multi_gpu_model, plot_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from tensorflow.keras.models import *
 from tensorflow.keras.layers import *
@@ -643,4 +643,6 @@ model_1.save(model_path)
 hist_path = os.path.join(project_folder, project_name + "_hist.pkl")
 
 import pickle
-pickle.dump(hist1, hist_path)
+
+with open(hist_path, 'wb') as pickle_file:
+    pickle.dump(hist1, pickle_file)
