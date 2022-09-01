@@ -218,7 +218,7 @@ def numpy_isqrt(number):
 
 
 def scheduler(epoch, lr):
-    d_model = 100000
+    d_model = 500000
     d_model = tf.cast(d_model, tf.float32)
     warmup_steps = 50
 
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     val_data_csv = args.val_csv
     logdir = args.log_dir
     
-    os.environ["CUDA_VISIBLE_DEVICES"]= "0"
+    os.environ["CUDA_VISIBLE_DEVICES"]= "1"
     print(tf.test.is_gpu_available())
     print(tf.__version__)
     
@@ -288,9 +288,6 @@ if __name__ == "__main__":
 
 
     model_1.fit(train_data,validation_data=val_data,epochs=500, callbacks=[tensorboard_callback, early_stop_callback, lr_callback])
-    
-    model_path = os.path.join("/home/vishal/DL_results", "unet64_lrc_500000_100"+".h5")
-    model_1.save(model_path)
     
     
     

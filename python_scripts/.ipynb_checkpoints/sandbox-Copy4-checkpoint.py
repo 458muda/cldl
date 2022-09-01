@@ -218,7 +218,7 @@ def numpy_isqrt(number):
 
 
 def scheduler(epoch, lr):
-    d_model = 100000
+    d_model = 1000000
     d_model = tf.cast(d_model, tf.float32)
     warmup_steps = 50
 
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     val_data_csv = args.val_csv
     logdir = args.log_dir
     
-    os.environ["CUDA_VISIBLE_DEVICES"]= "0"
+    os.environ["CUDA_VISIBLE_DEVICES"]= "2"
     print(tf.test.is_gpu_available())
     print(tf.__version__)
     
